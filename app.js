@@ -20,6 +20,11 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  res.render('index')
+})
+
 //start and listen on the Express Server
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
