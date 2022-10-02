@@ -25,22 +25,31 @@ express-handlebars: 3.0.0
 - photo
 
 3. Search name or category to find specific restaurant(s)
-- if user enter empty string, an alert will show on webpage to notify user
-- if there is no result for keyword, an alert will show on webpage to notify user
+- if the keyword is valid, keyword will show on search bar to remind user.
+- if user enters empty string, an alert will show on webpage to notify user.
+- if there is no result for keyword, an alert will show on webpage to notify user.
 
 # Enviroment setup
 Node.js
 # Install this Project
 0. before you start install project, please make sure you already installed node.js and npm
 1. Start your Terminal 
-```git clone ```
+```
+git clone 
+```
 2. change directory to resraurant_list
 3. enter following command in your terminal
-```npm install```
+```
+npm install https://github.com/LazerLotus/restaurant_list
+```
 4. after installation, enter following command in your terminal
-```npm run start```
+```
+npm run dev
+```
 5. check following message is shown on terminal
-```Express is listening on localhost:3000```
+```
+Express is listening on localhost:3000
+```
 6. open your browser and type http://localhost:3000 on url 
 7. if you want to stop service, please press ctrl+c in your terminal
 

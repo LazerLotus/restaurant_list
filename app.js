@@ -8,7 +8,7 @@ const exphbs = require('express-handlebars')
 
 //require restautant list here
 const restaurantList = require('./restaurant.json')
-
+let placeholder = "輸入餐廳、分類"
 //setting static files
 app.use(express.static('public'))
 
@@ -18,7 +18,7 @@ app.set('view engine', 'handlebars')
 
 //render index page
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: restaurantList.results })
+  res.render('index', { restaurants: restaurantList.results, placeholder: placeholder })
 })
 //render detail page of restaurant
 app.get('/restaurants/:restaurant_id', (req, res) => {
@@ -32,25 +32,22 @@ app.get('/search', (req, res) => {
   const restaurants = restaurantList.results.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.category.toLowerCase().includes(keyword.toLowerCase())
   })
-  console.log(restaurants.length)
-  console.log(!keyword.trim().length)
 
   if (!keyword.trim().length) {
     let alert = '<script>alert("請輸入有效字串！(不能僅含有空白字元)")</script>'
     res.render('index', { restaurants: restaurantList.results, alert: alert })
     return
   }
-  console.log("a")
+
   if (restaurants.length === 0) {
     let alert = '<script> alert("' + `您輸入的關鍵字 ${keyword} 沒有找到結果` + '")</script>'
     res.render('index', { restaurants: restaurantList.results, alert: alert })
-    console.log(restaurants)
-    console.log(alert)
+
     return
   }
-  console.log("b")
-  res.render('index', { restaurants: restaurants })
-  console.log("c")
+  placeholder = keyword
+  res.render('index', { restaurants: restaurants, placeholder: placeholder })
+
 })
 
 //start and listen on the Express Server
