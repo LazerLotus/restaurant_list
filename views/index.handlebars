@@ -1,3 +1,5 @@
+{{{alert}}}
+
 <!-- search bar -->
 <div class="container search-bar">
   <div class="search-bar-outer">
@@ -21,6 +23,8 @@
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
+
+        <!-- Generate Card for each restaurant-->
         {{#each restaurants}}
         <a href="/restaurants/{{this.id}}" class="text-secondary">
           <div class="card mb-3">
