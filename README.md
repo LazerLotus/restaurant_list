@@ -35,12 +35,12 @@ Node.js
 0. before you start install project, please make sure you already installed node.js and npm
 1. Start your Terminal 
 ```
-git clone 
+git clone https://github.com/LazerLotus/restaurant_list
 ```
 2. change directory to resraurant_list
 3. enter following command in your terminal
 ```
-npm install https://github.com/LazerLotus/restaurant_list
+npm install 
 ```
 4. after installation, enter following command in your terminal
 ```
